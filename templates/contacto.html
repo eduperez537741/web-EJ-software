@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto - EJ Software Solutions</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      body {
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        color: #ffffff;
+        position: relative;
+      }
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+            circle at 20% 20%,
+            rgba(255, 255, 255, 0.05) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 80%,
+            rgba(255, 255, 255, 0.05) 0%,
+            transparent 50%
+          );
+        pointer-events: none;
+        z-index: -1;
+      }
+      .contact-section {
+        padding: 100px 0;
+      }
+      .section-title {
+        color: #ffffff;
+        font-weight: 700;
+        margin-bottom: 40px;
+        position: relative;
+        padding-bottom: 20px;
+        text-align: center;
+      }
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 4px;
+        background: linear-gradient(90deg, #00f2fe, #4facfe);
+        border-radius: 2px;
+      }
+      .card {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+      .card-title {
+        color: #ffffff;
+        font-weight: 700;
+        position: relative;
+        padding-bottom: 15px;
+      }
+      .card-title::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background: linear-gradient(90deg, #00f2fe, #4facfe);
+        border-radius: 2px;
+      }
+      .form-control {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: #ffffff;
+        padding: 12px;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+      }
+      .form-control:focus {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: #00f2fe;
+        box-shadow: 0 0 0 0.25rem rgba(0, 242, 254, 0.25);
+        color: #ffffff;
+      }
+      .form-control::placeholder {
+        color: rgba(255, 255, 255, 0.5);
+      }
+      .form-label {
+        color: #e6e6e6;
+        font-weight: 500;
+      }
+      .btn-primary {
+        background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+        border: none;
+        padding: 12px 30px;
+        border-radius: 30px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(0, 242, 254, 0.4);
+      }
+      .contact-info {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        padding: 40px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        height: 100%;
+      }
+      .contact-icon {
+        font-size: 2.5rem;
+        color: #00f2fe;
+        margin-bottom: 1.5rem;
+        text-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
+      }
+      .contact-info h3 {
+        color: #ffffff;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+      .contact-info p {
+        color: #b3b3b3;
+        margin-bottom: 2rem;
+      }
+      .map-container {
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .navbar {
+        background: rgba(26, 26, 46, 0.8) !important;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      footer {
+        background: rgba(26, 26, 46, 0.9) !important;
+        backdrop-filter: blur(10px);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EJ Software Solutions</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/servicios">Servicios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/nosotros">Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/contacto">Contacto</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+      <div class="container">
+        <h1 class="section-title">Contáctanos</h1>
+
+        <div class="row">
+          <!-- Contact Form -->
+          <div class="col-md-8">
+            <div class="card">
+              <div class="card-body">
+                <h2 class="card-title">Envíanos un mensaje</h2>
+                <form>
+                  <div class="row mb-3">
+                    <div class="col-md-6">
+                      <label for="nombre" class="form-label">Nombre</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="nombre"
+                        required
+                        placeholder="Tu nombre"
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <label for="email" class="form-label">Email</label>
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        required
+                        placeholder="tu@email.com"
+                      />
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="asunto" class="form-label">Asunto</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="asunto"
+                      required
+                      placeholder="Asunto del mensaje"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="mensaje" class="form-label">Mensaje</label>
+                    <textarea
+                      class="form-control"
+                      id="mensaje"
+                      rows="5"
+                      required
+                      placeholder="Tu mensaje..."
+                    ></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary">
+                    Enviar Mensaje
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="col-md-4">
+            <div class="contact-info">
+              <div class="text-center mb-4">
+                <i class="fas fa-map-marker-alt contact-icon"></i>
+                <h3>Ubicación</h3>
+                <p>Dirección de la empresa<br />Ciudad, País</p>
+              </div>
+              <div class="text-center mb-4">
+                <i class="fas fa-phone contact-icon"></i>
+                <h3>Teléfono</h3>
+                <p>+34 621225567</p>
+              </div>
+              <div class="text-center">
+                <i class="fas fa-envelope contact-icon"></i>
+                <h3>Email</h3>
+                <p>info@ejsoftwaresolutions.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="py-5">
+      <div class="container">
+        <div class="map-container">
+          <div class="ratio ratio-21x9">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.2155710122!2d-73.98784492416467!3d40.75798897138939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1681234567890!5m2!1sen!2sus"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h5>EJ Software Solutions</h5>
+            <p>
+              Transformando el futuro con soluciones tecnológicas innovadoras.
+            </p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <h5>Contacto</h5>
+            <p>Email: info@ejsoftwaresolutions.com</p>
+            <p>Teléfono: +34 621225567</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EJ Software Solutions</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      .hero-section {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        color: white;
+      }
+      .navbar-brand {
+        font-size: 1.8rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        color: #ffffff !important;
+        text-align: center;
+        width: 100%;
+        padding: 0.5rem 1rem;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+      }
+      .service-card {
+        transition: transform 0.3s;
+      }
+      .service-card:hover {
+        transform: translateY(-10px);
+      }
+      .main-title {
+        font-size: 4.5rem;
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        background: linear-gradient(45deg, #00f2fe, #4facfe);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        letter-spacing: 1px;
+      }
+      .hero-subtitle {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        color: #ffffff;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      }
+      @media (max-width: 768px) {
+        .main-title {
+          font-size: 3rem;
+        }
+        .hero-subtitle {
+          font-size: 1.2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand text-center" href="{{ url_for('home') }}"
+          >EJ Software Solutions</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="{{ url_for('home') }}">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('servicios') }}"
+                >Servicios</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('nosotros') }}">Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('contacto') }}">Contacto</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <h1 class="main-title">
+              Transformando Ideas en Soluciones Digitales
+            </h1>
+            <p class="hero-subtitle">
+              Desarrollo de software personalizado, automatización de procesos y
+              soluciones tecnológicas innovadoras para tu negocio.
+            </p>
+            <a href="{{ url_for('contacto') }}" class="btn btn-primary btn-lg"
+              >Contáctanos</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-5">Nuestros Servicios</h2>
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="card service-card h-100">
+              <div class="card-body text-center">
+                <i class="fas fa-code fa-3x mb-3 text-primary"></i>
+                <h3 class="card-title">Desarrollo de Software</h3>
+                <p class="card-text">
+                  Creación de aplicaciones personalizadas para satisfacer las
+                  necesidades específicas de tu negocio.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card service-card h-100">
+              <div class="card-body text-center">
+                <i class="fas fa-robot fa-3x mb-3 text-primary"></i>
+                <h3 class="card-title">Automatización</h3>
+                <p class="card-text">
+                  Automatización de procesos empresariales para mejorar la
+                  eficiencia y reducir costos.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card service-card h-100">
+              <div class="card-body text-center">
+                <i class="fas fa-tools fa-3x mb-3 text-primary"></i>
+                <h3 class="card-title">Soporte Técnico</h3>
+                <p class="card-text">
+                  Solución de problemas técnicos y mantenimiento de sistemas
+                  existentes.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h5>EJ Software Solutions</h5>
+            <p>
+              Transformando el futuro con soluciones tecnológicas innovadoras.
+            </p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <h5>Contacto</h5>
+            <p>Email: info@ejsoftwaresolutions.com</p>
+            <p>Teléfono: +34 621225567</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

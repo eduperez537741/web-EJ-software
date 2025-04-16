@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Servicios - EJ Software Solutions</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      body {
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        color: #ffffff;
+        position: relative;
+      }
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+            circle at 20% 20%,
+            rgba(255, 255, 255, 0.05) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 80%,
+            rgba(255, 255, 255, 0.05) 0%,
+            transparent 50%
+          );
+        pointer-events: none;
+        z-index: -1;
+      }
+      .service-detail {
+        padding: 100px 0;
+      }
+      .service-section {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        padding: 40px;
+        margin-bottom: 60px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .service-section:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+      .service-icon {
+        font-size: 3.5rem;
+        color: #00f2fe;
+        margin-bottom: 1.5rem;
+        text-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
+      }
+      .service-section h2 {
+        color: #ffffff;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        position: relative;
+        padding-bottom: 15px;
+      }
+      .service-section h2::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background: linear-gradient(90deg, #00f2fe, #4facfe);
+        border-radius: 2px;
+      }
+      .service-section p.lead {
+        color: #e6e6e6;
+        margin-bottom: 2rem;
+      }
+      .service-section ul li {
+        color: #b3b3b3;
+        margin-bottom: 0.8rem;
+        display: flex;
+        align-items: center;
+      }
+      .service-section ul li i {
+        color: #00f2fe;
+        margin-right: 10px;
+        font-size: 1.2rem;
+      }
+      .service-section img {
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+      }
+      .service-section img:hover {
+        transform: scale(1.02);
+      }
+      .navbar {
+        background: rgba(26, 26, 46, 0.8) !important;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .cta-section {
+        background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+        padding: 60px 0;
+        color: white;
+      }
+      .btn-light {
+        background-color: rgba(255, 255, 255, 0.9);
+        border: none;
+        padding: 12px 30px;
+        border-radius: 30px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+      .btn-light:hover {
+        background-color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      }
+      footer {
+        background: rgba(26, 26, 46, 0.9) !important;
+        backdrop-filter: blur(10px);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">EJ Software Solutions</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/servicios">Servicios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/nosotros">Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contacto">Contacto</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Services Detail Section -->
+    <section class="service-detail">
+      <div class="container">
+        <h1 class="text-center mb-5 section-title">Nuestros Servicios</h1>
+
+        <!-- Desarrollo de Software -->
+        <div class="service-section">
+          <div class="row">
+            <div class="col-md-6">
+              <i class="fas fa-code service-icon"></i>
+              <h2>Desarrollo de Software</h2>
+              <p class="lead">
+                Soluciones tecnológicas personalizadas para tu negocio
+              </p>
+              <ul class="list-unstyled">
+                <li>
+                  <i class="fas fa-check"></i>Desarrollo de aplicaciones y
+                  paginas web
+                </li>
+                <li>
+                  <i class="fas fa-check"></i>Desarrollo de aplicaciones móviles
+                </li>
+                <li>
+                  <i class="fas fa-check"></i>Sistemas de gestión empresarial
+                </li>
+                <li><i class="fas fa-check"></i>Soluciones a medida</li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <img
+                src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                class="img-fluid"
+                alt="Desarrollo de Software"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Automatización -->
+        <div class="service-section">
+          <div class="row">
+            <div class="col-md-6 order-md-2">
+              <i class="fas fa-robot service-icon"></i>
+              <h2>Automatización de Procesos</h2>
+              <p class="lead">Optimiza tus operaciones empresariales</p>
+              <ul class="list-unstyled">
+                <li>
+                  <i class="fas fa-check"></i>Automatización de tareas
+                  repetitivas
+                </li>
+                <li><i class="fas fa-check"></i>Integración de sistemas</li>
+                <li>
+                  <i class="fas fa-check"></i>Flujos de trabajo automatizados
+                </li>
+                <li>
+                  <i class="fas fa-check"></i>Reducción de errores humanos
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-6 order-md-1">
+              <img
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                class="img-fluid"
+                alt="Automatización"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Soporte Técnico -->
+        <div class="service-section">
+          <div class="row">
+            <div class="col-md-6">
+              <i class="fas fa-tools service-icon"></i>
+              <h2>Soporte Técnico</h2>
+              <p class="lead">Asistencia profesional cuando la necesites</p>
+              <ul class="list-unstyled">
+                <li><i class="fas fa-check"></i>Soporte 24/7</li>
+                <li><i class="fas fa-check"></i>Mantenimiento preventivo</li>
+                <li><i class="fas fa-check"></i>Resolución de problemas</li>
+                <li><i class="fas fa-check"></i>Consultoría técnica</li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <img
+                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                class="img-fluid"
+                alt="Soporte Técnico"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+      <div class="container text-center">
+        <h2>¿Listo para transformar tu negocio?</h2>
+        <p class="lead">Contáctanos hoy mismo para una consulta gratuita</p>
+        <a href="/contacto" class="btn btn-light btn-lg">Solicitar Consulta</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h5>EJ Software Solutions</h5>
+            <p>
+              Transformando el futuro con soluciones tecnológicas innovadoras.
+            </p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <h5>Contacto</h5>
+            <p>Email: info@ejsoftwaresolutions.com</p>
+            <p>Teléfono: +34 621225567</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+# Entorno virtual
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Archivos de entorno
+.env
+.env.local
+
+# Archivos de IDE
+.vscode/
+.idea/
+
+# Archivos de log
+*.log
+
+# Archivos de distribución
+dist/
+build/
+*.egg-info/
+
+# Archivos de caché
+.pytest_cache/
+.coverage
+htmlcov/ 
