@@ -55,7 +55,7 @@ def serve_static(filename):
 
 if __name__ == '__main__':
     try:
-        # Configuración del servidor
+        # Configuración básica del servidor
         print("\n" + "="*60)
         print(" "*20 + "EJ Software Solutions")
         print("="*60)
@@ -66,18 +66,20 @@ if __name__ == '__main__':
         print("   o http://127.0.0.1:5000")
         print("\n" + "="*60 + "\n")
 
-        # Iniciar el servidor
+        # Iniciar el servidor con configuración básica
         app.run(
             debug=True,
-            host='127.0.0.1',  # Solo escuchar en localhost
+            host='0.0.0.0',  # Escuchar en todas las interfaces
             port=5000,
-            threaded=True
+            threaded=True,
+            use_reloader=False
         )
     except Exception as e:
         logger.error(f"Error al iniciar el servidor: {str(e)}")
         print(f"\nError al iniciar el servidor: {str(e)}")
         print("\nPosibles soluciones:")
-        print("1. Verifica que el puerto 5000 no esté en uso")
+        print("1. Verifica que no haya otros programas usando el puerto 5000")
         print("2. Asegúrate de que no haya un firewall bloqueando el acceso")
         print("3. Intenta reiniciar la aplicación")
-        print("\nSi el problema persiste, contacta al soporte técnico.")
+        print("4. Si el problema persiste, reinicia tu computadora")
+        print("\nSi el problema continúa, contacta al soporte técnico.")
